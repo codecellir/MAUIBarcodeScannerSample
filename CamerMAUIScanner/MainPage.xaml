@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CamerMAUIScanner.MainPage"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI">
+
+    <Grid RowDefinitions="auto,*,auto">
+        
+        <Label x:Name="myLabel" Text="waiting..."
+               Margin="15"/>
+
+        <cv:CameraView x:Name="cameraView" 
+                       BarcodeDetected="camerView_BarcodeDetected"
+                       Loaded="cameraView_Loaded"
+                       BarCodeDetectionEnabled="True"
+                       Grid.Row="1"/>
+        
+        <Button Text="Clear"
+                Clicked="Button_Clicked"
+                Grid.Row="2"
+                Margin="15"/>
+        
+    </Grid>
+
+</ContentPage>

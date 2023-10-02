@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIGoogleVisionScanner.MainPage"
+              xmlns:gv="clr-namespace:BarcodeScanner.Mobile;assembly=BarcodeScanner.Mobile.Maui">
+
+    <Grid RowDefinitions="auto,*,auto">
+
+        <Label x:Name="bracodeLabel"
+                FontSize="20"
+                Text="Result:"
+                HorizontalOptions="Start"
+               Margin="15"/>
+
+        <gv:CameraView Grid.Row="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       TorchOn="False"
+                       VibrationOnDetected="True"
+                       ScanInterval="100"
+                       IsScanning="True"
+                       OnDetected="gvCamera_OnDetected"
+                       x:Name="gvCamera"/>
+
+        <Button Text="Scan agian"
+                Grid.Row="2"
+                Clicked="Button_Clicked"
+                Margin="15"/>
+    </Grid>
+
+</ContentPage>

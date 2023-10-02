@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZXingScanner.MainPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls">
+
+
+
+    <Grid RowDefinitions="auto,*,Auto">
+
+        <Label x:Name="myLabel"
+                Text="Hello, World!"
+                FontSize="32"
+                HorizontalOptions="Center"
+               Margin="10"/>
+
+        <zxing:CameraBarcodeReaderView BarcodesDetected="CameraBarcodeReaderView_BarcodesDetected"
+                                       IsDetecting="True"
+                                       Grid.Row="1"
+                                       x:Name="barcodeScanner"/>
+
+        <Button Text="Scan Again"
+                Clicked="Button_Clicked"
+                Grid.Row="2"
+                Margin="5"/>
+    </Grid>
+
+
+
+</ContentPage>
